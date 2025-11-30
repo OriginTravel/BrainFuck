@@ -56,7 +56,7 @@ unsigned int run(const char* code, unsigned int size){
                     return 2;
                 }
                 if (memory[ptr] != 0){
-                    i = stack[sp];
+                    i = stack[sp-1];
                 }
                 else{
                     --sp;
@@ -67,6 +67,7 @@ unsigned int run(const char* code, unsigned int size){
         }
     }
     free(memory);
+    fflush(stdout);
     return 0;
 }
 int main(int argc, char** argv){
